@@ -9,7 +9,7 @@ const Shop = () => {
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);
   };
-
+ 
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Products" />

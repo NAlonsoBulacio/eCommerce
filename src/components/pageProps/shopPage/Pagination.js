@@ -19,7 +19,7 @@ function Items({ currentItems, selectedBrands, selectedCategories }) {
 
     return isBrandSelected && isCategorySelected;
   });
-
+ 
   return (
     <>
       {filteredItems.map((item) => (

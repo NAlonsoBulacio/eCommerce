@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { logo, logoLight } from "../../../assets/images";
+import { logo, logoLight, logoTransparent } from "../../../assets/images";
 import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
+import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
+import { BsSuitHeartFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const products = useSelector((state) => state.orebiReducer.products);
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(true);
   const [sidenav, setSidenav] = useState(false);
   const [category, setCategory] = useState(false);
   const [brand, setBrand] = useState(false);
+  const [showUser, setShowUser] = useState(false);
+
   const location = useLocation();
   useEffect(() => {
     let ResponsiveMenu = () => {
@@ -25,14 +32,20 @@ const Header = () => {
     ResponsiveMenu();
     window.addEventListener("resize", ResponsiveMenu);
   }, []);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showSearchBar, setShowSearchBar] = useState(false);
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
-    <div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
+    <div className="w-full h-24 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
       <nav className="h-full px-4 max-w-container mx-auto relative">
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
             <div>
-              <Image className="w-32 object-cover" imgSrc={logo} />
+              <Image className="w-24 object-cover" imgSrc={logoTransparent} />
             </div>
           </Link>
           <div>
@@ -47,7 +60,7 @@ const Header = () => {
                   {navBarList.map(({ _id, title, link }) => (
                     <NavLink
                       key={_id}
-                      className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                      className="flex font-normal hover:font-bold w-20 h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#fc148c] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
                       to={link}
                       state={{ data: location.pathname.split("/")[1] }}
                     >
@@ -72,7 +85,7 @@ const Header = () => {
                   <div className="w-full h-full bg-primeColor p-6">
                     <img
                       className="w-28 mb-6"
-                      src={logoLight}
+                      src={logoTransparent}
                       alt="logoLight"
                     />
                     <ul className="text-gray-200 flex flex-col gap-2">
@@ -147,6 +160,43 @@ const Header = () => {
                 </motion.div>
               </div>
             )}
+          </div>
+          <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
+            <div onClick={() => setShowUser(!showUser)} className="flex">
+              <FaUser />
+              <FaCaretDown />
+            </div>
+            {showUser && (
+              <motion.ul
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
+              >
+                <Link to="/signin">
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Login
+                  </li>
+                </Link>
+                <Link onClick={() => setShowUser(false)} to="/signup">
+                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                    Sign Up
+                  </li>
+                </Link>
+                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                  Profile
+                </li>
+              </motion.ul>
+            )}
+            <Link to="/cart">
+              <div className="relative">
+                <FaShoppingCart />
+                <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
+                  {products.length > 0 ? products.length : 0}
+                </span>
+              </div>
+            </Link>
+            {/* <BsSuitHeartFill /> */}
           </div>
         </Flex>
       </nav>

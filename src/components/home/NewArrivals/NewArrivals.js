@@ -3,10 +3,11 @@ import Slider from "react-slick";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
 import {
-  newArrOne,
-  newArrTwo,
-  newArrThree,
-  newArrFour,
+  river,
+  boca,
+  adidas3,
+  puma1,
+  arg2,
 } from "../../../assets/images/index";
 import SampleNextArrow from "./SampleNextArrow";
 import SamplePrevArrow from "./SamplePrevArrow";
@@ -53,7 +54,7 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             _id="100001"
-            img={newArrOne}
+            img={river}
             productName="Round Table Clock"
             price="44.00"
             color="Black"
@@ -64,7 +65,7 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             _id="100002"
-            img={newArrTwo}
+            img={boca}
             productName="Smart Watch"
             price="250.00"
             color="Black"
@@ -75,7 +76,7 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             _id="100003"
-            img={newArrThree}
+            img={arg2}
             productName="cloth Basket"
             price="80.00"
             color="Mixed"
@@ -86,7 +87,7 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             _id="100004"
-            img={newArrFour}
+            img={puma1}
             productName="Funny toys for babies"
             price="60.00"
             color="Mixed"
@@ -97,7 +98,7 @@ const NewArrivals = () => {
         <div className="px-2">
           <Product
             _id="100005"
-            img={newArrTwo}
+            img={adidas3}
             productName="Funny toys for babies"
             price="60.00"
             color="Mixed"

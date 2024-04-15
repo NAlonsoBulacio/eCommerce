@@ -11,34 +11,38 @@ const Category = () => {
   const checkedCategorys = useSelector(
     (state) => state.orebiReducer.checkedCategorys
   );
+  const products = useSelector(
+    (state) => state.orebiReducer.products
+  );
   const dispatch = useDispatch();
 
   const category = [
     {
       _id: 9006,
-      title: "Imprimante",
-    },
-    {
-      _id: 9007,
-      title: "Encre",
-    },
-    {
-      _id: 9008,
-      title: "Ruban",
+      title: "Botines",
     },
     {
       _id: 9009,
-      title: "Bac de dechet",
+      title: "Camisetas",
     },
+
+    {
+      _id: 9008,
+      title: "Medias",
+    },
+    // {
+    //   _id: 9007,
+    //   title: "Encre",
+    // },
   ];
 
   const handleToggleCategory = (category) => {
     dispatch(toggleCategory(category));
-  };
+    };
 
   return (
     <div className="w-full">
-      <NavTitle title="Shop by Category" icons={true} />
+      <NavTitle title="Categoria" icons={true} />
       <div>
         <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
           {category.map((item) => (

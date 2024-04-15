@@ -1,11 +1,18 @@
-import logo from "./orebiLogo.png";
+import logo from "./sitioLogo.jpg";
+import logoTransparent from "./logoTransparent.png";
 import logoLight from "./logoLight.png";
 import bannerImgOne from "./banner/bannerImgOne.webp";
 import bannerImgTwo from "./banner/bannerImgTwo.webp";
 import bannerImgThree from "./banner/bannerImgThree.webp";
+import bannerImgFour from "./sitio/banner.jpeg";
+import bannerImgFive from "./sitio/banner2.jpg";
+import bannerImgSix from "./sitio/banner3.jpg";
 import saleImgOne from "./sale/saleImgOne.webp";
 import saleImgTwo from "./sale/saleImgTwo.webp";
 import saleImgThree from "./sale/saleImgThree.webp";
+import saleImgFour from "./sitio/nikes1.jpg";
+import saleImgFive from "./sitio/sale1.jpg";
+import saleImgSix from "./sitio/sale2.jpg";
 // ============== Products Start here ====================
 import pdf1 from "../pdf/pdf1.pdf";
 // New Arrivals
@@ -52,6 +59,8 @@ import productOfTheYear from "./products/productOfTheYear.webp";
 import paymentCard from "./payment.png";
 import emptyCart from "../images/emptyCart.png";
 
+
+
 import IMPRIMANTE_PANTUM_CP2200DW from "../images/products/imprimante/IMPRIMANTE_PANTUM_CP2200DW.webp";
 import IMPRIMANTE_PANTUM_BM5100FDW from "../images/products/imprimante/IMPRIMANTE_PANTUM_BM5100FDW.webp";
 import IMPRIMANTE_PANTUM_BP5100DN from "../images/products/imprimante/IMPRIMANTE_PANTUM_BP5100DN.webp";
@@ -75,15 +84,40 @@ import ricoh5 from "../images/products/imprimante/ricoh5.webp";
 import espson1 from "../images/products/imprimante/espson1.webp";
 import espson2 from "../images/products/imprimante/espson2.webp";
 
+import nike1 from "./sitio/botines/nike/nikeMercurial.jpg";
+import nike2 from "./sitio/botines/nike/nikePhantom.jpg";
+
+import adidas1 from "./sitio/botines/adidas/adidasPredator.jpg";
+import adidas2 from "./sitio/botines/adidas/adidasXCrazy.jpg";
+import adidas3 from "./sitio/botines/adidas/adidasXSpeed.jpg";
+
+import puma1 from "./sitio/botines/pumaFutureUltimate.jpg";
+
+import boca from "./sitio/camisetas/camisetaBoca.jpeg";
+import river from "./sitio/camisetas/camisetaRiver.jpeg";
+import arg from "./sitio/camisetas/camisetaArg.jpeg";
+import arg2 from "./sitio/camisetas/camisetaArg2.jpeg";
+
+import medias1 from "./sitio/medias/medias1.jpeg";
+import medias2 from "./sitio/medias/medias2.jpeg";
+import medias3 from "./sitio/medias/medias3.jpeg";
+
 export {
   logo,
+  logoTransparent,
   logoLight,
   bannerImgOne,
   bannerImgTwo,
   bannerImgThree,
+  bannerImgFour,
+  bannerImgFive,
+  bannerImgSix,
   saleImgOne,
   saleImgTwo,
   saleImgThree,
+  saleImgFour,
+  saleImgFive,
+  saleImgSix,
   // ===================== Products start here ============
   // New Arrivals
   newArrOne,
@@ -116,6 +150,22 @@ export {
   ruban2,
   ruban3,
   ruban4,
+
+  nike1,
+  nike2,
+  adidas1,
+  adidas2,
+  adidas3,
+  puma1,
+
+  river,
+  boca,
+  arg,
+  arg2,
+  
+  medias1,
+  medias2,
+  medias3,
 
   // Sprcial Offers
   spfOne,

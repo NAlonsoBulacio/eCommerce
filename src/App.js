@@ -40,6 +40,9 @@ const Layout = () => {
         pauseOnHover
         theme="colored"
       />
+      <div className="bg-black w-screen h-10 flex justify-center items-center">
+        <p className="text-[13px] text-gray-200">🚚 ENVÍO GRATIS A PARTIR DE $99.999</p>
+      </div>
       <Header />
       <HeaderBottom />
       <SpecialCase />

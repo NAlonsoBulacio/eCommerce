@@ -2,10 +2,12 @@ import React from "react";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
 import {
-  bestSellerOne,
-  bestSellerTwo,
-  bestSellerThree,
-  bestSellerFour,
+  nike1,
+  nike2,
+  adidas1,
+  adidas2,
+  adidas3,
+  puma1,
 } from "../../../assets/images/index";
 
 const BestSellers = () => {
@@ -15,7 +17,7 @@ const BestSellers = () => {
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         <Product
           _id="1011"
-          img={bestSellerOne}
+          img={nike1}
           productName="Flower Base"
           price="35.00"
           color="Blank and White"
@@ -24,7 +26,7 @@ const BestSellers = () => {
         />
         <Product
           _id="1012"
-          img={bestSellerTwo}
+          img={nike2}
           productName="New Backpack"
           price="180.00"
           color="Gray"
@@ -33,7 +35,7 @@ const BestSellers = () => {
         />
         <Product
           _id="1013"
-          img={bestSellerThree}
+          img={adidas1}
           productName="Household materials"
           price="25.00"
           color="Mixed"
@@ -42,7 +44,7 @@ const BestSellers = () => {
         />
         <Product
           _id="1014"
-          img={bestSellerFour}
+          img={adidas2}
           productName="Travel Bag"
           price="220.00"
           color="Black"
